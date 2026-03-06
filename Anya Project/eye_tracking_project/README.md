@@ -39,7 +39,7 @@ python -m eye_tracking_project.eye_tracker --source 0 --width 640 --height 480 -
 Some MediaPipe installs include the legacy **Solutions** API (`mp.solutions.face_mesh`) and will work out of the box.
 
 Newer MediaPipe installs (like `mediapipe==0.10.32`) may only include the **Tasks** API and require a **FaceLandmarker model file** (`.task`).
-If you see a message about missing `mp.solutions.face_mesh`, download a FaceLandmarker model and run with:
+There is a FaceLandmarker file already included in the models folder of this project, so this problem should not occur. However for whatever reason if you see a message about missing `mp.solutions.face_mesh`, download a FaceLandmarker model and run with:
 
 ```bash
 python -m eye_tracking_project.eye_tracker --source 0 --model /path/to/face_landmarker.task
