@@ -1,12 +1,12 @@
 # Real-Time Eye Tracking System (MediaPipe + EAR)
 
-This project detects **eye state (OPEN/CLOSED)** from a live webcam (or a video file) using:
+This project detects **eye state (whether OPEN/CLOSED)** from a live webcam (or a video file) using:
 
 - **OpenCV** for real-time video IO + drawing overlays
 - **MediaPipe Face Mesh** for facial landmarks
 - **Eye Aspect Ratio (EAR)** geometry for blink/eye-state classification
 
-This follows the requirements from `MPCP Intern Project: Real-Time Eye Tracking System` (provided PDF).
+This follows the requirements from the `MPCP Intern Project: Real-Time Eye Tracking System` google document.
 
 ## Setup
 
@@ -60,11 +60,11 @@ Then run:
 python -m eye_tracking_project.eye_tracker --source 0
 ```
 
-### If the webcam won’t open (macOS)
+### If the webcam won’t open (on macOS)
 
-If you see an error like “Could not open video source: 0”, try:
+If you see an error like “Could not open video source: 0”, try the following fixes:
 
-- Grant camera permission to your Terminal / Cursor / Python in **System Settings → Privacy & Security → Camera**
+- Grant camera permission to your Terminal / Python in **System Settings → Privacy & Security → Camera**
 - Close other apps that might be using the camera (Zoom/Meet/etc.)
 - Probe indices quickly: `--probe-cameras`
 - Force AVFoundation backend:
@@ -123,5 +123,5 @@ pytest -q
 ## Known Limitations
 
 - Threshold may need tuning depending on camera angle/lighting and individual face geometry.
-- “NO FACE” simply means Face Mesh didn’t detect a face in the current frame.
+- “NO FACE” simply means the program didn’t detect a face in the current frame.
 
